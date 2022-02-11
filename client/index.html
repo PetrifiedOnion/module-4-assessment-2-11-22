@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Back End Assessment</title>
+  </head>
+  <h1><center>
+    <body class="container">
+      <button id="complimentButton">Get a compliment</button>
+      <button id="fortuneButton">Get an Orwellian Fortune</button>
+    </center></h1>
+      
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      document.getElementById("complimentButton").onclick = function () {
+        axios.get("http://localhost:4000/api/compliment/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      document.getElementById("fortuneButton").onclick = function () {
+        axios.get("http://localhost:4000/api/fortune/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
+      
+    </script>
+    <h2><Center>
+      <img src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-MnwpczCraJQ%2FVQ4va6uKITI%2FAAAAAAABXzc%2FCfTbw1M-zjM%2Fs1600%2Fpolice%252Bstate%252Bmoving%252Beye.gif&f=1&nofb=1" width="900" height="700">
+    </Center></h2>
+  </body>
+</html>
