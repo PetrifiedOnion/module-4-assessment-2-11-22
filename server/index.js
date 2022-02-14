@@ -22,7 +22,7 @@ app.get("/api/compliment", (req, res) => {
   
 });
 app.get("/api/fortune", (req, res) => {
-  const fortunes = ["Big Brother is Watching You.",
+  const fortunes = [
 					 "If you want to keep a secret, you must hide it from yourself.",
 					 "If you want a picture of the future, imagine a boot stamping on a human face —for ever.",
            "Until they become conscious they will never rebel, and until after they have rebelled they cannot become conscious.",
@@ -43,6 +43,9 @@ app.get("/api/fortune", (req, res) => {
   res.status(200).send(randomFortune);
   
 });
+const port = 5500
 
 
-app.listen(4000, () => console.log("Server running on 4000"));
+
+
+app.listen(port, () => console.log(`Server running on ${port}`));
