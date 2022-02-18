@@ -7,6 +7,8 @@
     <body class="container">
       <button id="complimentButton">Get a compliment</button>
       <button id="fortuneButton">Get an Orwellian Fortune</button>
+      <button id="deleteButton">Delete History!</button>
+      <!-- Note nothing will ever truly delete that browsing history you generated at 14 years old... -->
     </center></h1>
       
       <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
@@ -25,13 +27,24 @@
               alert(data);
             });
       };
+      document.getElementById("deleteButton").onclick = function () {
+        axios.delete("http://localhost:4000/api/delete/")
+            .then(function (response) {
+              const data = response.data;
+              alert(data);
+            });
+      };
       
     </script>
     <h2><Center>
       <img id="brotherEye"
       src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2F4.bp.blogspot.com%2F-MnwpczCraJQ%2FVQ4va6uKITI%2FAAAAAAABXzc%2FCfTbw1M-zjM%2Fs1600%2Fpolice%252Bstate%252Bmoving%252Beye.gif&f=1&nofb=1" width="900" height="700">
     </Center></h2>
+    <img id="caveMan"
+    src="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwww.tvguide.com%2Fa%2Fimg%2Fcatalog%2Fprovider%2F1%2F2%2F1-3940440085.jpg&f=1&nofb=1" >
+    
+    <!-- style="display: none;"  -->
     <script src="brotherEye.js"></script>
-    <script src="server/index.js"></script>
+    <script src="../server/index.js"></script>
   </body>
 </html>
