@@ -9,7 +9,9 @@ const newFortune = {
   id: 490,
   fortune: "A little leaven leaventh the whole lump.",
 };
-const addPost = (body) => {
+const addPost = (el) => {
+  el.preventDefault();
+  const body = newFortune;
   axios
     .post("http://localhost:4000/api/fortune", body)
     .then((res) => {
@@ -20,4 +22,6 @@ const addPost = (body) => {
       console.log("It didn't work.");
     });
 };
-addPost(newFortune);
+
+const fortuneButton = document.getElementById("addFortune");
+fortuneButton.addEventListener("click", addPost);
