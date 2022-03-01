@@ -40,9 +40,13 @@ app.get("/api/fortune", (req, res) => {
 
   res.status(200).send(randomFortune);
 });
-app.delete("/api/delete", (req, res) => { 
-  
-  fortunes = ["Sorry, Montag, all the fortunes are deleted."]
+app.delete("/api/delete", (req, res) => {
+  fortunes = ["Sorry, Montag, all the fortunes are deleted."];
+});
+
+app.post("/api/fortune", (req, res) => {
+  console.log(req.body);
+  res.status(200).send(req.body.fortune);
 });
 const port = 4000;
 
